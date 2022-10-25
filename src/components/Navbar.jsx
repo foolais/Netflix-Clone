@@ -2,8 +2,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between p-4">
-      <h1 className="text-primaryColor text-4xl cursor-pointer font-bebasNue">
+    <div className="flex items-center justify-between p-4 z-[99] absolute w-full">
+      <h1 className="text-primaryColor text-5xl cursor-pointer font-bebasNue">
         Netflix
       </h1>
       <div>

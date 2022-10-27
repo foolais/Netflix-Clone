@@ -28,7 +28,7 @@ const Main = () => {
   return (
     <div className="w-full h-[650px] text-white">
       <div className="w-full h-full ">
-        <div className="absolute w-full h-[650px] bg-gradient-to-r bg-gradient-to-t from-black"></div>
+        <div className="absolute w-full h-[650px] bg-gradient-to-t from-black"></div>
         <img
           className="object-cover object-top w-full h-full"
           src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}

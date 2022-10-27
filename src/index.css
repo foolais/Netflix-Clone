@@ -5,7 +5,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 body {
   background: #000;
   font-family: "Poppins", sans-serif;
+  -ms-overflow-style: none;
 }

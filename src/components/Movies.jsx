@@ -17,7 +17,7 @@ const Movies = ({ item }) => {
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black/80 opacity-0 hover:opacity-100 cursor-pointer">
         <p className="text-white flex items-center justify-center h-full font-semibold text-xs md:text-base">
-          {truncateString(item?.title, 32)}
+          {truncateString(item?.title, 27)}
         </p>
       </div>
     </div>

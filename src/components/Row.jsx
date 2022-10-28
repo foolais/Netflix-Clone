@@ -3,9 +3,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Movies from "./Movies";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { UserAuth } from "../context/AuthContext";
+import DetailModalContainer from "./DetailModalContainer";
 
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
+  const { modal, setModal, moviesData } = UserAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +31,12 @@ const Row = ({ title, fetchURL, rowID }) => {
 
   return (
     <div>
+      {modal ? (
+        <DetailModalContainer
+          item={moviesData}
+          closeModal={() => setModal(false)}
+        />
+      ) : null}
       <h2 className="text-white font-semibold text-lg lg:text-xl p-4 mt-11 ">
         {title}
       </h2>

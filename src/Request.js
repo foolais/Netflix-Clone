@@ -9,6 +9,7 @@ const request = {
   actionMovies: `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=action&page=1`,
   romanceMovies: `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=romance&page=1`,
   animationMovies: `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=animation&page=1`,
+  genreMovies: `https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=en-US`,
 };
 
 export default request;

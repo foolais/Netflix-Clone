@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
@@ -30,7 +30,7 @@ const ModalSessionPage = (props) => {
         </button>
         {error ? <p className="text-yellow-400 text-sm">{error}</p> : null}
       </form>
-      {page == "signin" ? (
+      {page === "signin" ? (
         <>
           <p className=" text-sm mt-4">
             <span className="text-[#737373]">New to Netflix?</span>
@@ -39,7 +39,7 @@ const ModalSessionPage = (props) => {
         </>
       ) : page === "signup" ? (
         <>
-          <p className=" text-sm">
+          <p className=" text-sm mt-4">
             <span className="text-[#737373]">Subscribe to Netflix?</span>
             <Link to={`/${anotherPage}`}>{" " + anotherTitle}</Link>
           </p>

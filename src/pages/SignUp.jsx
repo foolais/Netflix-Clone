@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ModalSessionPage, Navbar } from "../components";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const { signUp, email, password } = UserAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +15,8 @@ const SignUp = () => {
       alert("akun berhasil dibuat");
       navigate("/signin");
     } catch (error) {
-      console.log(error);
+      const errorCode = error.code.slice(5).replace(/-/g, " ");
+      setError(errorCode);
     }
   };
 
@@ -34,6 +36,7 @@ const SignUp = () => {
             page="signup"
             anotherPage="signin"
             action={handleSubmit}
+            error={error}
           />
         </div>
       </div>

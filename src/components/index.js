@@ -7,6 +7,7 @@ import GetStarted from "./GetStarted";
 import StoryCard from "./StoryCard";
 import FaqQuestion from "./FaqQuestion";
 import LanguagePicker from "./LanguagePicker";
+import DetailModalContainer from "./DetailModalContainer";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   StoryCard,
   FaqQuestion,
   LanguagePicker,
+  DetailModalContainer,
 };

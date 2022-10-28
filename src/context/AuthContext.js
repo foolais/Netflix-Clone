@@ -13,6 +13,8 @@ export function AuthContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [modal, setModal] = useState(false);
+  const [moviesData, setMoviesData] = useState([]);
 
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -46,6 +48,10 @@ export function AuthContextProvider({ children }) {
         setEmail,
         password,
         setPassword,
+        modal,
+        setModal,
+        moviesData,
+        setMoviesData,
       }}
     >
       {children}

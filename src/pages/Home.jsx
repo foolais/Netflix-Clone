@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Main, Row } from "../components";
+import { Navbar, Main, Row, Footer } from "../components";
 import request from "../Request";
 
 const Home = () => {
@@ -30,6 +30,9 @@ const Home = () => {
         title="Animation Movies"
         fetchURL={request.animationMovies}
       />
+      <div className="border-t-8 border-t-[#222]">
+        <Footer />
+      </div>
     </div>
   );
 };

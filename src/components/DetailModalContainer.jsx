@@ -7,9 +7,9 @@ const DetailModalContainer = (props) => {
 
   return (
     <>
-      <div className="fixed w-full h-full py-8 top-0 z-[99] bg-black/10">
-        <div className="w-11/12 mx-auto bg-[#181818] h-full rounded-xl relative md:w-3/4 lg:w-4/6 xl:w-1/2 ">
-          <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] ">
+      <div className="fixed w-full h-full top-0 z-[99] bg-black/20 overflow-y-auto py-8">
+        <div className="w-11/12 bg-[#181818] h-[1000px] rounded-xl absolute left-1/2 -translate-x-1/2 md:w-3/4 lg:w-4/6 xl:w-1/2 ">
+          <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
             <div className="w-full h-full">
               <div className="bg-gradient-to-t from-[#181818] w-full absolute top-0 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]"></div>
               <img

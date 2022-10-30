@@ -7,6 +7,7 @@ import {
   FaRegQuestionCircle,
   FaSignOutAlt,
   FaHome,
+  FaRegBookmark,
 } from "react-icons/fa";
 
 const Navbar = ({ location }) => {
@@ -51,16 +52,22 @@ const Navbar = ({ location }) => {
                 </div>
                 {accModal ? (
                   <div className="w-max bg-zinc-800 absolute right-0 mr-2 mt-4 flex flex-col text-white text-sm gap-2 rounded-md overflow-hidden">
+                    <Link to="/dashboard">
+                      <div className="cursor-pointer hover:bg-zinc-700 py-2  px-4 flex items-center gap-2">
+                        <FaHome />
+                        Dashboard
+                      </div>
+                    </Link>
+                    <Link to="/bookmark">
+                      <div className="cursor-pointer hover:bg-zinc-700 py-2  px-4 flex items-center gap-2">
+                        <FaRegBookmark />
+                        Bookmark
+                      </div>
+                    </Link>
                     <Link to="/account">
                       <div className="cursor-pointer hover:bg-zinc-700 py-2 px-4 flex items-center gap-2">
                         <FaRegUser />
                         Account
-                      </div>
-                    </Link>
-                    <Link to="/dashboard">
-                      <div className="cursor-pointer hover:bg-zinc-700 py-2 px-4 flex items-center gap-2">
-                        <FaHome />
-                        Dashboard
                       </div>
                     </Link>
                     <Link to="/help-center">

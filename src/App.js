@@ -8,6 +8,7 @@ import {
   LandingPage,
   SignIn,
   SignUp,
+  Bookmark,
 } from "./pages";
 
 function App() {
@@ -24,6 +25,15 @@ function App() {
               <ProtectedRoute>
                 {" "}
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/bookmark"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <Bookmark />
               </ProtectedRoute>
             }
           />

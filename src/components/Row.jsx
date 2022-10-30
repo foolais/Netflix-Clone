@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Movies from "./Movies";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UserAuth } from "../context/AuthContext";
-import DetailModalContainer from "./DetailModalContainer";
+import PreviewModalMovies from "./PreviewModalMovies";
 
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
@@ -32,7 +32,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   return (
     <div>
       {modal ? (
-        <DetailModalContainer
+        <PreviewModalMovies
           item={moviesData}
           closeModal={() => setModal(false)}
         />

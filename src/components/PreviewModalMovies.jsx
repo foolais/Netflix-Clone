@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import { FaBookmark, FaPlay, FaRegBookmark, FaTimes } from "react-icons/fa";
+import { UserAuth } from "../context/AuthContext";
+import { db } from "../firebase";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 const PreviewModalMovies = (props) => {
   const { item, closeModal } = props;
-  const [save, setSave] = useState(false);
+  const [bookmark, setBookmark] = useState(false);
+  const { user } = UserAuth();
+
+  const movieID = doc(db, "users", `${user?.email}`);
+
+  const bookmarkMovies = async () => {
+    setBookmark(!bookmark);
+    await updateDoc(movieID, {
+      bookmarks: arrayUnion({
+        id: item.id,
+        title: item.title,
+        img: item.backdrop_path,
+      }),
+    });
+  };
+
   return (
     <div className="w-full bg-black/20 fixed top-0 left-0 right-0 bottom-0 z-[99] overflow-y-auto">
       <div className="w-11/12 h-full z-[99] mx-auto py-4 md:w-3/4 lg:w-4/6 xl:w-1/2">
@@ -20,8 +38,8 @@ const PreviewModalMovies = (props) => {
                     <FaPlay />
                     Play
                   </button>
-                  <div onClick={() => setSave(!save)}>
-                    {save ? (
+                  <div onClick={bookmarkMovies}>
+                    {bookmark ? (
                       <button className="border-2 border-white text-white p-2 rounded-full hover:bg-white hover:text-black">
                         <FaBookmark />
                       </button>

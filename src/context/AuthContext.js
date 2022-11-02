@@ -1,11 +1,13 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+
+import { doc, setDoc } from "firebase/firestore";
 
 const AuthContext = createContext();
 
@@ -15,10 +17,15 @@ export function AuthContextProvider({ children }) {
   const [password, setPassword] = useState("");
   const [modal, setModal] = useState(false);
   const [moviesData, setMoviesData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
-  }
+  const signUp = async (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password);
+    setLoading(true);
+    await setDoc(doc(db, "users", email), {
+      bookmarks: [],
+    }).then(() => setLoading(false));
+  };
 
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
@@ -52,6 +59,7 @@ export function AuthContextProvider({ children }) {
         setModal,
         moviesData,
         setMoviesData,
+        loading,
       }}
     >
       {children}

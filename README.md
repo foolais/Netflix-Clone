@@ -1,4 +1,5 @@
 Netflix Clone with ReactJS, Tailwind CSS, and Firebase
 
-fire@fire.com
-fire123
+Demo
+user : fire@fire.com
+pass : fire123
